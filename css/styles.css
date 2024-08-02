@@ -1,0 +1,71 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Açık gri arka plan */
+    color: #333; /* Koyu gri metin rengi */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* İçeriğin dikey olarak ortalanmasını sağlar */
+}
+
+h1 {
+    color: #6a1b9a; /* Soft mor rengi */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Form elemanlarını dikey olarak hizalar */
+    align-items: center; /* Form elemanlarını yatayda ortalar */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #6a1b9a; /* Soft mor rengi */
+}
+
+input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #6a1b9a; /* Soft mor rengi */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a0072; /* Daha koyu mor rengi */
+}
+
+pre {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 20px;
+    width: 300px;
+}

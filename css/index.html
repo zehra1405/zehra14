@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input {
+            margin-right: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        pre {
+            white-space: pre-wrap; /* Metin alanındaki uzun satırları sarmak için */
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        async function getWeather() {
+            const city = document.getElementById('city').value;
+            const country = document.getElementById('country').value;
+            const response = await fetch(`/weather?city=${city}&country=${country}`);
+            const data = await response.json();
+            document.getElementById('weather').innerText = 
+                data.cod === 200 ?
+                `City: ${data.name}\nCountry: ${data.sys.country}\nTemperature: ${data.main.temp} °C\nWeather: ${data.weather[0].description}` :
+                `Error: ${data.message}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hava Durumu Verileri</h1>
+    <label for="city">Şehir:</label>
+    <input type="text" id="city" placeholder="Enter city name">
+    
+    <label for="country">Ülke (kodu):</label>
+    <input type="text" id="country" placeholder="Enter country code (e.g., US)">
+    
+    <button onclick="getWeather()">Hava Durumu</button>
+    
+    <pre id="weather"></pre>
+</body>
+</html>
