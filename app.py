@@ -36,7 +36,7 @@ def weather():
     except requests.RequestException as e:
         return jsonify({'error': f'API isteği sırasında bir hata oluştu: {str(e)}'}), 500
     except Exception as e:
-        return jsonify({'error': f'Genel bir hata oluştu: {str(e)}'}), 500
+        return jsonify({'error': f'Çok Genel bir hata oluştu: {str(e)}'}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
